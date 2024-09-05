@@ -1,11 +1,17 @@
-'use client';
+"use client";
 
 import { getExperience } from "@/lib/actions/portfolio.actions";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
+import BoxReveal from "../magicui/box-reveal";
+import ShinyButton from "../magicui/shiny-button";
+import { ClientSideMotion2 } from "../clientSideMotion";
 
 export default function Timeline() {
   const [experiences, setExperiences] = useState([]);
@@ -33,9 +39,31 @@ export default function Timeline() {
   if (!experiences || experiences.length === 0) {
     return <div>No experiences found</div>;
   }
-
+  const phrase = `experience`;
   return (
-    <section id="experience" className="w-full max-w-[1200px] mx-auto mb-10">
+    <section
+      id="experience"
+      className="w-full max-w-[1200px] mx-auto my-16 md:my-20 "
+    >
+      <div className="flex justify-center my-4">
+        <ShinyButton text="Experience" className=""/>
+      </div>
+
+      <div className="flex flex-col items-center justify-center my-4">
+        <BoxReveal boxColor="#5046e6" duration={0.7}>
+          <h1 className="text-cneter font-bold lg:text-4xl md:text-3xl text-2xl">
+            My Experience
+          </h1>
+        </BoxReveal>
+        <ClientSideMotion2>
+
+        <p className="text-center mb-12 mt-4 container">
+        My professional journey has been marked by hands-on internships
+         and significant academic achievements . 
+        </p>
+        </ClientSideMotion2>
+
+      </div>
       <VerticalTimeline lineColor="#000" layout="2-columns" animate={true}>
         {experiences.map((item, index) => (
           <VerticalTimelineElement
@@ -58,9 +86,9 @@ export default function Timeline() {
                 <img
                   src={urlFor(item.img).url()}
                   alt={`${item.title} icon`}
-                  width={30}
-                  height={30}
-                  className="object-contain"
+                  width={55}
+                  height={55}
+                  className="object-contain rounded-full"
                 />
               </div>
             }
@@ -68,8 +96,8 @@ export default function Timeline() {
               background: "white",
               fontSize: "1.1rem",
             }}
-            className=""
-          >
+            className="vertical-timeline-element--work"
+            >
             <div className="">
               <h3 className="font-medium text-gray-900 -mt-1 text-lg">
                 {item.title}
