@@ -4,8 +4,10 @@ import Link from "next/link";
 import {
   BriefcaseBusiness,
   CalendarIcon,
+  Github,
   House,
   Infinity,
+  Linkedin,
   MailIcon,
   Moon,
   Sun,
@@ -84,12 +86,12 @@ const DATA = {
       GitHub: {
         name: "GitHub",
         url: "https://github.com/islabenchaiba15",
-        icon: GitHub,
+        icon: Github,
       },
       LinkedIn: {
         name: "LinkedIn",
         url: "https://www.linkedin.com/in/m-islam-benchaiba/",
-        icon: LinkedIn,
+        icon: Linkedin,
       },
     },
   },
