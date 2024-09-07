@@ -32,19 +32,13 @@ const Profile = async () => {
           </p>
           </ClientSideMotion3>
           <ClientSideMotion2>
-          <div className="flex flex-wrap items-center gap-2 md:gap-4">
+          <div className="flex flex-wrap items-center gap-4 md:gap-6">
             <ButtonB
               title="Download CV"
               href={"/cv_islam_benchaiba.pdf"}
               Download={true}
               color="bg-gray-950 dark:bg-gray-200 text-white dark:text-black"
               icon={<Download size={16} />}
-            />
-            <ButtonB
-              title="Contact me"
-              href="#contact"
-              icon={<Phone size={16} />}
-              color="bg-white dark:bg-gray-800 text-black dark:text-white"
             />
             <a
               href="https://www.linkedin.com/in/m-islam-benchaiba/"
