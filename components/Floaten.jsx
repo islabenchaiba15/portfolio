@@ -119,7 +119,7 @@ export const DockDemo = () => {
                       "size-12 rounded-full text-foreground hover:text-primary"
                     )}
                   >
-                    <item.icon className="size-6" />
+                    <item.icon className="size-5" />
                   </Link>
                 </TooltipTrigger>
                 <TooltipContent>
@@ -130,7 +130,7 @@ export const DockDemo = () => {
           ))}
           <Separator
             orientation="vertical"
-            className="h-full mx-2 bg-gray-300 dark:bg-gray-700"
+            className="h-full bg-gray-300 dark:bg-gray-700"
             decorative
           />{" "}
           {Object.entries(DATA.contact.social).map(([name, social]) => (
@@ -144,7 +144,7 @@ export const DockDemo = () => {
                       "size-12 rounded-full text-foreground hover:text-primary"
                     )}
                   >
-                    <social.icon className="size-6" />
+                    <social.icon className="size-5" />
                   </Link>
                 </TooltipTrigger>
                 <TooltipContent>
@@ -155,7 +155,7 @@ export const DockDemo = () => {
           ))}
           <Separator
             orientation="vertical"
-            className="h-full mx-2 bg-gray-300 dark:bg-gray-700"
+            className="h-full bg-gray-300 dark:bg-gray-700"
             decorative
           />{" "}
           <DockIcon>
@@ -167,8 +167,8 @@ export const DockDemo = () => {
                   onClick={toggleTheme}
                   className="size-12 rounded-full text-foreground hover:text-primary"
                 >
-                  <Sun className="h-6 w-6 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                  <Moon className="absolute h-6 w-6 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                  <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                  <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
                   <span className="sr-only">Toggle theme</span>
                 </Button>
               </TooltipTrigger>

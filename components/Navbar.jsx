@@ -44,7 +44,7 @@ const Navbar = () => {
           <Cursor cursorColor="#DE3163" />
         </h1>
         <p className="text-xs uppercase tracking-[2px] text-gray-500 mb-2">
-        Crafted with love and precision
+        Crafted with passion and precision
         </p>
       </div>
     </div>
