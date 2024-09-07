@@ -23,12 +23,8 @@ import { Dock, DockIcon } from "@/components/magicui/dock";
 import {
   AdsClick,
   AllInclusive,
-  DarkMode,
   GitHub,
-  LightMode,
   LinkedIn,
-  Person,
-  Person2,
   PersonOutline,
   WorkOutline,
 } from "@mui/icons-material";
@@ -98,7 +94,7 @@ const DATA = {
       },
       LinkedIn: {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/m-islam-benchaiba-4329b22a8/",
+        url: "https://www.linkedin.com/in/m-islam-benchaiba/",
         icon: LinkedIn,
       },
     },

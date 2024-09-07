@@ -1,14 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Linkedin, Github, Phone, Download } from "lucide-react";
+import { Linkedin, Github, Phone, Download, GithubIcon } from "lucide-react";
 import { FlipWords } from "./ui/flip-words";
 import Image from "next/image";
 import ButtonB from "./ui/ButtonB";
-import { Cursor, useTypewriter } from "react-simple-typewriter";
 import { getProfile } from "@/lib/actions/portfolio.actions";
 import Typing from "./type";
 import { ClientSideMotion, ClientSideMotion2, ClientSideMotion3 } from "./clientSideMotion";
-import { GitHub } from "@mui/icons-material";
 
 const Profile = async () => {
   const profile = await getProfile();
@@ -39,7 +37,8 @@ const Profile = async () => {
           <div className="flex flex-wrap items-center gap-2 md:gap-4">
             <ButtonB
               title="Download CV"
-              href=""
+              href={"/cv_islam_benchaiba.pdf"}
+              Download={true}
               color="bg-gray-950 dark:bg-gray-200 text-white dark:text-black"
               icon={<Download size={16} />}
             />
@@ -50,7 +49,7 @@ const Profile = async () => {
               color="bg-white dark:bg-gray-800 text-black dark:text-white"
             />
             <a
-              href="https://www.linkedin.com/in/m-islam-benchaiba-4329b22a8/"
+              href="https://www.linkedin.com/in/m-islam-benchaiba/"
 
               className="bg-gray-200 dark:bg-gray-700 p-2 rounded-full text-black dark:text-white hover:text-gray-500 dark:hover:text-gray-400 transition-colors duration-300"
             >
@@ -60,7 +59,7 @@ const Profile = async () => {
               href="https://github.com/islabenchaiba15"
               className="bg-gray-200 dark:bg-gray-700 p-2 rounded-full text-black dark:text-white hover:text-gray-500 dark:hover:text-gray-400 transition-colors duration-300"
             >
-              <GitHub size={18} />
+              <GithubIcon size={18} />
             </a>
           </div>
           </ClientSideMotion2>

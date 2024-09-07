@@ -64,7 +64,7 @@ export default function Timeline() {
         </ClientSideMotion2>
 
       </div>
-      <VerticalTimeline lineColor="#000" layout="2-columns" animate={true}>
+      <VerticalTimeline lineColor="#C0C0C0" layout="2-columns" animate={true}>
         {experiences.map((item, index) => (
           <VerticalTimelineElement
             key={index}
