@@ -1,5 +1,4 @@
-import { GitHub } from "@mui/icons-material";
-import { Globe } from "lucide-react";
+import { Github, Globe } from "lucide-react";
 import React from "react";
 import ShinyButton from "./magicui/shiny-button";
 import { getProjects } from "@/lib/actions/portfolio.actions";
@@ -73,7 +72,7 @@ const Projects = async () => {
                   href={project.githubLink}
                   className="text-white hover:opacity-75 font-semibold justify-between gap-1 flex items-center bg-black p-2 rounded-lg "
                 >
-                  <GitHub size={18} />
+                  <Github size={18} />
                   Source
                 </a>
               )}
