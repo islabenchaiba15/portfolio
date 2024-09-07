@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/Button";
 import { Separator } from "@/components/ui/separator";
 import {
   Tooltip,
