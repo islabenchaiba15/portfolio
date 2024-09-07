@@ -11,7 +11,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="overflow-hidden scrollbar-track-pink-50 scrollbar-thumb-blue-950 scrollbar  scroll-smooth snap-mandatory snap-y h-screen overflow-y-scroll">
+    <main className="overflow-hidden scrollbar-track-pink-50 scrollbar-thumb-blue-950 scrollbar  scroll-smooth  h-screen overflow-y-scroll">
       <div className="">
         <DockDemo />
       </div>
@@ -35,7 +35,7 @@ export default function Home() {
           <div className=" py-2">
             <PortfolioShowcase />
           </div>
-          <div className=" pt-4 pb-24">
+          <div className=" pt-12 pb-24">
             <ContactForm />
           </div>
         </div>

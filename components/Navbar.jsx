@@ -7,7 +7,7 @@ import { AuroraBackground } from "./ui/aurora-background";
 const Navbar = () => {
   const [text, count] = useTypewriter({
     words: [
-      "Hi,my name is Islam Benchaiba",
+      "Hi,it is Islam Benchaiba",
       "Guy-who-loves-cats.jsx",
       "<ButLovesCodingMore/>",
     ],

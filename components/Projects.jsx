@@ -26,11 +26,12 @@ const Projects = async () => {
   );
 
   const ProjectGrid = ({ projects }) => (
-    <ClientSideMotion2>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {projects.map((project, index) => (
+            <ClientSideMotion2  key={index}>
+
         <div
-          key={index}
+         
           className="border rounded-lg overflow-hidden shadow-lg cursor-pointer"
         >
           <div className="relative w-full h-48">
@@ -61,7 +62,7 @@ const Projects = async () => {
               {project.websiteLink && (
                 <a
                   href={project.websiteLink}
-                  className="text-white hover:opacity-75 font-semibold justify-between gap-1 flex items-center bg-black p-2 rounded-lg"
+                  className="text-white dark:bg-gray-800 hover:opacity-75 font-semibold justify-between gap-1 flex items-center bg-black p-2 rounded-lg"
                 >
                   <Globe size={18} />
                   Website
@@ -70,7 +71,7 @@ const Projects = async () => {
               {project.githubLink && (
                 <a
                   href={project.githubLink}
-                  className="text-white hover:opacity-75 font-semibold justify-between gap-1 flex items-center bg-black p-2 rounded-lg "
+                  className="text-white dark:bg-gray-800 hover:opacity-75 font-semibold justify-between gap-1 flex items-center bg-black p-2 rounded-lg "
                 >
                   <Github size={18} />
                   Source
@@ -79,9 +80,9 @@ const Projects = async () => {
             </div>
           </div>
         </div>
+        </ClientSideMotion2>
       ))}
     </div>
-    </ClientSideMotion2>
   );
 
   return (
@@ -103,6 +104,7 @@ const Projects = async () => {
               there is more and more i didn't share it here.
             </span>
           </p>
+          </ClientSideMotion2>
         <Tabs defaultValue="frontend" className="w-full ">
           <TabsList className="mb-4 flex items-center w-fit mx-auto">
             <TabsTrigger value="frontend">Frontend</TabsTrigger>
@@ -119,7 +121,6 @@ const Projects = async () => {
             <ProjectGrid projects={mobileProjects} />
           </TabsContent>
         </Tabs>
-        </ClientSideMotion2>
 
       </div>
     </section>

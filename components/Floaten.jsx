@@ -4,11 +4,13 @@ import Link from "next/link";
 import {
   BriefcaseBusiness,
   CalendarIcon,
+  Contact,
   Github,
   House,
   Infinity,
   Linkedin,
   MailIcon,
+  MessageCircle,
   Moon,
   Sun,
   Target,
@@ -80,6 +82,8 @@ const DATA = {
 
     { href: "#experience", icon: Infinity, label: "experience" },
     { href: "#projects", icon: Target, label: "projects" },
+    { href: "#contact", icon: MessageCircle, label: "contact" },
+
   ],
   contact: {
     social: {
@@ -133,26 +137,6 @@ export const DockDemo = () => {
             className="h-full bg-gray-300 dark:bg-gray-700"
             decorative
           />{" "}
-          {Object.entries(DATA.contact.social).map(([name, social]) => (
-            <DockIcon key={name}>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Link
-                    href={social.url}
-                    className={cn(
-                      buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-full text-foreground hover:text-primary"
-                    )}
-                  >
-                    <social.icon className="size-5" />
-                  </Link>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>{name}</p>
-                </TooltipContent>
-              </Tooltip>
-            </DockIcon>
-          ))}
           <Separator
             orientation="vertical"
             className="h-full bg-gray-300 dark:bg-gray-700"

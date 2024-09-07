@@ -46,7 +46,7 @@ export default async function Skills() {
           <h1 className="text-center font-bold text-2xl md:text-3xl lg:text-4xl">My Skills</h1>
         </BoxReveal>
         <ClientSideMotion2>
-          <p className="text-center mb-8 mt-4">
+          <p className="text-center mb-4 mt-2">
             I am skilled in web development and software engineering, with hands-on experience in modern technologies.
           </p>
         </ClientSideMotion2>
