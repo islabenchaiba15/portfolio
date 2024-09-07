@@ -2,12 +2,15 @@
 import React from "react";
 import Link from "next/link";
 import {
+  BriefcaseBusiness,
   CalendarIcon,
-  HomeIcon,
+  House,
+  Infinity,
   MailIcon,
   Moon,
-  PencilIcon,
   Sun,
+  Target,
+  User,
 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
@@ -20,17 +23,8 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { Dock, DockIcon } from "@/components/magicui/dock";
-import {
-  AdsClick,
-  AllInclusive,
-  GitHub,
-  LinkedIn,
-  PersonOutline,
-  WorkOutline,
-} from "@mui/icons-material";
+
 import { useTheme } from "next-themes";
-import { ClientSideMotion2 } from "./clientSideMotion";
-// import { ModeToggle } from "@/components/mode-toggle";
 
 const Icons = {
   calendar: (props) => <CalendarIcon {...props} />,
@@ -78,12 +72,12 @@ const Icons = {
 
 const DATA = {
   navbar: [
-    { href: "#Home", icon: HomeIcon, label: "Home" },
-    { href: "#about", icon: PersonOutline, label: "about" },
-    { href: "#skills", icon: WorkOutline, label: "skills" },
+    { href: "#Home", icon: House, label: "Home" },
+    { href: "#about", icon: User, label: "about" },
+    { href: "#skills", icon: BriefcaseBusiness, label: "skills" },
 
-    { href: "#experience", icon: AllInclusive, label: "experience" },
-    { href: "#projects", icon: AdsClick, label: "projects" },
+    { href: "#experience", icon: Infinity, label: "experience" },
+    { href: "#projects", icon: Target, label: "projects" },
   ],
   contact: {
     social: {

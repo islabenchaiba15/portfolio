@@ -1,7 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { Linkedin, Github, Phone, Download, GithubIcon } from "lucide-react";
-import { FlipWords } from "./ui/flip-words";
 import Image from "next/image";
 import ButtonB from "./ui/ButtonB";
 import { getProfile } from "@/lib/actions/portfolio.actions";

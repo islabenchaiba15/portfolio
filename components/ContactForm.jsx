@@ -19,9 +19,9 @@ import { Textarea } from "./ui/textarea";
 import { sendEmail } from "@/lib/actions/portfolio.actions";
 import { useToast } from "@/hooks/use-toast";
 import { ToastAction } from "./ui/toast";
-import { Telegram } from "@mui/icons-material";
 import ShinyButton from "./magicui/shiny-button";
 import { ClientSideMotion2 } from "./clientSideMotion";
+import { Send } from "lucide-react";
 
 const formSchema = z.object({
   username: z.string().min(2, {
@@ -128,7 +128,7 @@ const ContactForm = () => {
           />
           <Button type="submit" className="flex gap-1 ">
             Submit
-            <Telegram size={12} className="group-hover:translate-x-2 group-hover:-translate-y-2"/>
+            <Send size={12} className="group-hover:translate-x-2 group-hover:-translate-y-2"/>
           </Button>
         </form>
       </Form>
