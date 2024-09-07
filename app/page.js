@@ -12,7 +12,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className="overflow-hidden scrollbar-track-pink-50 scrollbar-thumb-blue-950 scrollbar  scroll-smooth snap-mandatory snap-y h-screen overflow-y-scroll">
-      <div className="snap-center">
+      <div className="">
         <DockDemo />
       </div>
       <div className="snap-center">
@@ -25,17 +25,19 @@ export default function Home() {
         <Work />
       </div> */}
       <div className="snap-start">
-        <div className=" pt-3 pb-8">
-          <Skills />
-        </div>
-        <div className=" py-4">
-          <Timeline />
-        </div>
-        <div className=" py-2">
-          <PortfolioShowcase />
-        </div>
-        <div className=" pt-4 pb-24">
-          <ContactForm />
+        <div>
+          <div className=" pt-3 pb-8">
+            <Skills />
+          </div>
+          <div className=" py-4">
+            <Timeline />
+          </div>
+          <div className=" py-2">
+            <PortfolioShowcase />
+          </div>
+          <div className=" pt-4 pb-24">
+            <ContactForm />
+          </div>
         </div>
       </div>
       {/* <Work/> */}
