@@ -16,7 +16,7 @@ export default function Home() {
         <DockDemo />
       </div>
       <div className="snap-center">
-            <Navbar />
+        <Navbar />
       </div>
       <div className="snap-center">
         <Profile />
@@ -24,17 +24,19 @@ export default function Home() {
       {/* <div className="snap-center">
         <Work />
       </div> */}
-      <div className="snap-center pt-3 pb-8">
-        <Skills />
-      </div>
-      <div className="snap-center py-4">
-        <Timeline />
-      </div>
-      <div className="snap-center py-5">
-        <PortfolioShowcase />
-      </div>
-      <div className="snap-center pt-4 pb-24">
-        <ContactForm />
+      <div className="snap-start">
+        <div className=" pt-3 pb-8">
+          <Skills />
+        </div>
+        <div className=" py-4">
+          <Timeline />
+        </div>
+        <div className=" py-2">
+          <PortfolioShowcase />
+        </div>
+        <div className=" pt-4 pb-24">
+          <ContactForm />
+        </div>
       </div>
       {/* <Work/> */}
     </main>

@@ -85,14 +85,14 @@ const Projects = async () => {
   );
 
   return (
-    <section className="py-12" id="projects">
+    <section className="" id="projects">
       <div className="container mx-auto flex flex-col items-center">
         <div className="flex justify-center my-4">
           <ShinyButton text="Projects" className="" />
         </div>
         <BoxReveal boxColor="#5046e6" className="my-2" duration={0.7}>
           <h1 className="text-cneter font-bold lg:text-4xl md:text-3xl text-2xl">
-            Check out my latest work
+             my latest work
           </h1>
         </BoxReveal>
         <ClientSideMotion2>

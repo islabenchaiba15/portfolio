@@ -43,7 +43,7 @@ export default function Timeline() {
   return (
     <section
       id="experience"
-      className="w-full max-w-[1200px] mx-auto my-16 md:my-20 "
+      className="w-full max-w-[1200px] mx-auto my-8 md:my-20 "
     >
       <div className="flex justify-center my-4">
         <ShinyButton text="Experience" className=""/>

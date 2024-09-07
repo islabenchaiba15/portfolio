@@ -15,9 +15,9 @@ const Profile = async () => {
   return (
     <div
       id="about"
-      className="text-black dark:text-white min-h-screen flex items-center p-4 bg-white dark:bg-gray-900 transition-colors duration-300"
+      className="text-black dark:text-white h-screen flex items-center py-6 px-4 bg-white dark:bg-gray-900 transition-colors duration-300"
     >
-      <div className="md:container mx-auto gap-12 md:gap-4 lg:gap-0 flex flex-col md:flex-row items-center justify-between">
+      <div className="md:container mx-auto gap-6 md:gap-4 lg:gap-0 flex flex-col md:flex-row items-center justify-between">
         <div className="md:w-1/2 mb-8 lg:mb-0 mx-2">
           <h1 className="text-3xl md:text-4xl font-bold mb-2">
             Hi, It's{" "}
