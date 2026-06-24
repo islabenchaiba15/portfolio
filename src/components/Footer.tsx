@@ -53,54 +53,6 @@ export default function Footer() {
   return (
     <footer className="w-full text-ink-black">
 
-      {/* ── DARK CTA BAND ─────────────────────────────────────────── */}
-      <div className="hidden md:block bg-ink-black text-white relative overflow-hidden">
-        {/* subtle dot-grid decoration */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle, #ffffff 1px, transparent 1px)",
-            backgroundSize: "24px 24px",
-          }}
-        />
-        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-          {/* Left: headline */}
-          <div className="flex flex-col gap-2 max-w-lg">
-            <span className="text-[10px] font-bold uppercase tracking-widest text-white/40">
-              Open to opportunities
-            </span>
-            <h2 className="text-3xl font-extrabold tracking-tight leading-tight">
-              Let&apos;s turn your data into{" "}
-              <span className="text-accent-blue">decisions.</span>
-            </h2>
-            <p className="text-sm text-white/50 leading-relaxed mt-1">
-              Available for freelance projects, full-time roles, and consulting.
-              Based in Algeria · Remote-first.
-            </p>
-          </div>
-
-          {/* Right: action buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 shrink-0">
-            <a
-              href="mailto:mi.benchaiba@esi-sba.dz"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-accent-blue hover:bg-blue-600 text-white text-sm font-semibold rounded-lg transition-colors duration-150 focus-ring"
-            >
-              <Mail className="w-4 h-4" />
-              Get in touch
-            </a>
-            <a
-              href="/cv-data-analyst.pdf"
-              download
-              className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 text-white text-sm font-semibold rounded-lg border border-white/10 transition-colors duration-150 focus-ring"
-            >
-              <Download className="w-4 h-4" />
-              Download CV
-            </a>
-          </div>
-        </div>
-      </div>
 
       {/* ── MAIN FOOTER BODY ──────────────────────────────────────── */}
       <div className="bg-section-gray border-t border-border-gray">

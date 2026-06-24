@@ -135,10 +135,11 @@ export default function Projects() {
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {PROJECTS.map((project) => (
+          {PROJECTS.map((project, index) => (
             <div 
               key={project.id}
-              className="bg-section-gray border border-border-gray rounded-[14px] overflow-hidden hover:border-ink-black/20 hover:scale-[1.01] transition-all duration-200 flex flex-col justify-between"
+              className="bg-section-gray border border-border-gray rounded-[14px] overflow-hidden hover:border-ink-black/20 hover:scale-[1.01] transition-all duration-200 flex flex-col justify-between reveal-slide-up"
+              style={{ transitionDelay: isVisible ? `${index * 150}ms` : "0ms" }}
             >
               {/* Card Cover Image */}
               <div className="w-full h-48 overflow-hidden relative border-b border-border-gray bg-section-gray">
@@ -153,9 +154,18 @@ export default function Projects() {
                 <div>
                   {/* Meta details */}
                   <div className="flex justify-between items-start mb-4">
-                    <div className="flex items-center gap-1.5 text-xs text-accent-blue font-bold tracking-wider uppercase">
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent-blue"></span>
-                      Case Study
+                    <div className="flex flex-wrap items-center gap-2">
+                      <div className="flex items-center gap-1.5 text-xs text-accent-blue font-bold tracking-wider uppercase">
+                        <span className="w-1.5 h-1.5 rounded-full bg-accent-blue"></span>
+                        Case Study
+                      </div>
+                      <span className={`text-[9px] font-extrabold px-2 py-0.5 rounded-full border uppercase tracking-wider ${
+                        project.id === 1 
+                          ? "bg-green-500/10 text-status-green border-status-green/20" 
+                          : "bg-[#737373]/10 text-muted-text border-border-gray"
+                      }`}>
+                        {project.id === 1 ? "Real Data" : "Simulated Data"}
+                      </span>
                     </div>
                     <a 
                       href={project.github} 
@@ -252,7 +262,16 @@ export default function Projects() {
               {/* Modal Header */}
               <div className="flex items-center justify-between border-b border-border-gray px-6 py-4 bg-section-gray">
                 <div>
-                  <span className="text-[10px] font-bold text-accent-blue uppercase tracking-widest">Selected Case Study</span>
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-[10px] font-bold text-accent-blue uppercase tracking-widest">Selected Case Study</span>
+                    <span className={`text-[9px] font-extrabold px-2 py-0.5 rounded-full border uppercase tracking-wider ${
+                      selectedProject.id === 1 
+                        ? "bg-green-500/10 text-status-green border-status-green/20" 
+                        : "bg-[#737373]/10 text-muted-text border-border-gray"
+                    }`}>
+                      {selectedProject.id === 1 ? "Real Data" : "Simulated Data"}
+                    </span>
+                  </div>
                   <h3 id="modal-title" className="text-base md:text-lg font-bold text-ink-black tracking-tight">{selectedProject.title}</h3>
                 </div>
                 <button 

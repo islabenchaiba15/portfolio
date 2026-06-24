@@ -91,7 +91,11 @@ export default function Experience() {
               
               {/* Loop Experience */}
               {EXPERIENCE_DATA.map((exp, idx) => (
-                <div key={idx} className="relative">
+                <div 
+                  key={idx} 
+                  className="relative reveal-slide-up"
+                  style={{ transitionDelay: isVisible ? `${idx * 150}ms` : "0ms" }}
+                >
                   {/* Timeline dot */}
                   <span className="absolute -left-[31px] top-1.5 flex h-4.5 w-4.5 items-center justify-center rounded-full bg-white border border-ink-black">
                     <Briefcase className="w-2.5 h-2.5 text-ink-black" />
@@ -116,7 +120,10 @@ export default function Experience() {
               ))}
 
               {/* Education Entry in the same timeline */}
-              <div className="relative pt-4">
+              <div 
+                className="relative pt-4 reveal-slide-up"
+                style={{ transitionDelay: isVisible ? "450ms" : "0ms" }}
+              >
                 {/* Timeline dot */}
                 <span className="absolute -left-[31px] top-[22px] flex h-4.5 w-4.5 items-center justify-center rounded-full bg-white border border-accent-blue">
                   <GraduationCap className="w-2.5 h-2.5 text-accent-blue" />
@@ -140,7 +147,7 @@ export default function Experience() {
           </div>
 
           {/* Right Column: Additional Project Work */}
-          <div className="lg:col-span-4 flex flex-col gap-6 text-left">
+          <div className="lg:col-span-4 flex flex-col gap-6 text-left reveal-slide-right">
             <div className="flex flex-col gap-3">
               <div className="inline-flex items-center gap-2">
                 <span className="text-[11px] font-bold uppercase tracking-widest text-muted-text">Secondary Work</span>

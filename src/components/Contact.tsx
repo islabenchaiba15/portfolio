@@ -119,7 +119,7 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:items-start">
           
           {/* Left Column: Bold statement & Info */}
-          <div className="lg:col-span-6 flex flex-col justify-center text-left">
+          <div className="lg:col-span-6 flex flex-col justify-center text-left reveal-slide-left">
             <div className="inline-flex items-center gap-2 mb-4">
               <span className="text-[11px] font-bold uppercase tracking-widest text-white/40">Get in touch</span>
               <div className="h-px w-8 bg-white/20"></div>
@@ -190,7 +190,7 @@ export default function Contact() {
           </div>
 
           {/* Right Column: Clean Form Card */}
-          <div className="lg:col-span-6 w-full flex justify-center">
+          <div className="lg:col-span-6 w-full flex justify-center reveal-slide-right">
             <div className="w-full max-w-[460px] bg-white text-ink-black rounded-[14px] p-6 md:p-8 flex flex-col gap-5">
               <h3 className="text-lg font-bold tracking-tight">Send a Message</h3>
               

@@ -32,7 +32,7 @@ export default function Hero() {
             <div className="inline-flex items-center gap-2 mb-4">
               <span className="h-1.5 w-1.5 rounded-full bg-accent-blue pulse-indicator"></span>
               <span className="text-[11px] font-bold uppercase tracking-widest text-muted-text">
-                Full Stack Data Analyst
+                Data Analyst & Analytics Engineer
               </span>
             </div>
 

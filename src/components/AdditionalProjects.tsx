@@ -76,7 +76,8 @@ export default function AdditionalProjects() {
           {projects.map((proj, idx) => (
             <div 
               key={idx}
-              className="bg-white border border-border-gray rounded-[14px] p-6 flex flex-col justify-between text-left"
+              className="bg-white border border-border-gray rounded-[14px] p-6 flex flex-col justify-between text-left reveal-slide-up"
+              style={{ transitionDelay: isVisible ? `${idx * 150}ms` : "0ms" }}
             >
               <div>
                 {/* Meta Category */}

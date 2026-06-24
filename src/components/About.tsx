@@ -20,7 +20,7 @@ export default function About() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center">
           
           {/* Left Column: Photo Placeholder */}
-          <div className="lg:col-span-4 flex justify-center lg:justify-start">
+          <div className="lg:col-span-4 flex justify-center lg:justify-start reveal-slide-left">
             <div className="relative group">
               {/* Outer decorative ring */}
               <div className="absolute -inset-2 rounded-[18px] border border-border-gray bg-white/50 scale-95 group-hover:scale-100 transition-all duration-300"></div>
@@ -40,7 +40,7 @@ export default function About() {
                 </div>
                 <div className="text-center z-10">
                   <h3 className="text-sm font-bold text-ink-black">Mohamed Islam Benchaiba</h3>
-                  <p className="text-[11px] text-muted-text uppercase tracking-widest mt-1">Full Stack Data Analyst</p>
+                  <p className="text-[11px] text-muted-text uppercase tracking-widest mt-1">Data Analyst & Analytics Engineer</p>
                 </div>
 
                 {/* Location indicator */}
@@ -55,7 +55,7 @@ export default function About() {
           </div>
 
           {/* Right Column: Bio Content */}
-          <div className="lg:col-span-8 flex flex-col gap-6 text-left">
+          <div className="lg:col-span-8 flex flex-col gap-6 text-left reveal-slide-right">
             <div className="inline-flex items-center gap-2">
               <span className="text-[11px] font-bold uppercase tracking-widest text-muted-text">About Me</span>
               <div className="h-px w-8 bg-border-gray"></div>
