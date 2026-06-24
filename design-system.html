@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Minimal Portfolio — Design System</title>
+<style>
+  :root{
+    --black:#0a0a0a;
+    --white:#ffffff;
+    --gray-50:#fafafa;
+    --gray-100:#f3f3f3;
+    --gray-200:#e7e7e7;
+    --gray-400:#a3a3a3;
+    --gray-500:#737373;
+    --gray-700:#404040;
+    --accent-gold:#f5a623;
+    --accent-green:#22c55e;
+    --accent-blue:#2f6fed;
+    --radius-pill:999px;
+    --radius-md:14px;
+    --radius-sm:8px;
+    --maxw:1100px;
+    --font-display:'Inter','Helvetica Neue',Arial,sans-serif;
+    --font-body:'Inter','Helvetica Neue',Arial,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    color:var(--black);
+    background:var(--white);
+    line-height:1.5;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  header.top{
+    padding:60px 24px 20px;
+    text-align:center;
+    border-bottom:1px solid var(--gray-200);
+  }
+  header.top h1{font-size:28px;margin:0 0 6px;letter-spacing:-0.02em;}
+  header.top p{color:var(--gray-500);margin:0;font-size:15px;}
+
+  nav.toc{
+    display:flex;flex-wrap:wrap;gap:8px;justify-content:center;
+    padding:18px 24px;border-bottom:1px solid var(--gray-200);
+    position:sticky;top:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(6px);z-index:10;
+  }
+  nav.toc a{
+    font-size:13px;color:var(--gray-700);text-decoration:none;
+    padding:6px 14px;border-radius:var(--radius-pill);border:1px solid var(--gray-200);
+  }
+  nav.toc a:hover{background:var(--gray-100);}
+
+  section{padding:56px 24px;border-bottom:1px solid var(--gray-200);}
+  section.alt{background:var(--gray-50);}
+  section h2{font-size:22px;margin:0 0 6px;letter-spacing:-0.01em;}
+  section .lead{color:var(--gray-500);font-size:14px;margin:0 0 28px;max-width:640px;}
+
+  /* ---- color swatches ---- */
+  .swatch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;max-width:var(--maxw);margin:0 auto;}
+  .swatch{border:1px solid var(--gray-200);border-radius:var(--radius-md);overflow:hidden;}
+  .swatch .fill{height:80px;}
+  .swatch .meta{padding:10px 12px;font-size:12px;}
+  .swatch .meta .name{font-weight:600;display:block;}
+  .swatch .meta .hex{color:var(--gray-500);font-family:monospace;}
+
+  /* ---- type ---- */
+  .type-row{display:flex;align-items:baseline;gap:24px;padding:16px 0;border-bottom:1px dashed var(--gray-200);max-width:var(--maxw);margin:0 auto;}
+  .type-row:last-child{border-bottom:none;}
+  .type-row .label{width:170px;flex:0 0 auto;font-size:12px;color:var(--gray-500);font-family:monospace;}
+  .type-row .sample{flex:1;}
+  .h-hero{font-size:42px;font-weight:800;letter-spacing:-0.02em;line-height:1.05;}
+  .h-display{font-size:64px;font-weight:800;letter-spacing:-0.02em;line-height:0.95;}
+  .h-section{font-size:24px;font-weight:700;letter-spacing:-0.01em;}
+  .h-card{font-size:16px;font-weight:700;}
+  .t-body{font-size:15px;color:var(--gray-700);}
+  .t-caption{font-size:12px;color:var(--gray-500);}
+
+  /* ---- buttons ---- */
+  .row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;max-width:var(--maxw);margin:0 auto;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    background:var(--black);color:var(--white);border:none;
+    padding:14px 26px;border-radius:var(--radius-pill);
+    font-size:14px;font-weight:600;cursor:pointer;
+  }
+  .btn.secondary{background:var(--white);color:var(--black);border:1px solid var(--gray-200);}
+  .btn.small{padding:10px 18px;font-size:13px;}
+
+  /* ---- badges / stars ---- */
+  .stars{color:var(--accent-gold);font-size:16px;letter-spacing:2px;}
+  .badge{display:inline-flex;align-items:center;gap:6px;background:var(--black);color:var(--white);font-size:11px;font-weight:700;padding:5px 10px;border-radius:6px;text-transform:uppercase;}
+  .verified{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:var(--accent-blue);}
+  .verified .dot{width:14px;height:14px;border-radius:50%;background:var(--accent-blue);color:white;display:inline-flex;align-items:center;justify-content:center;font-size:9px;}
+
+  /* ---- cards ---- */
+  .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;max-width:var(--maxw);margin:0 auto;}
+  .card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-md);padding:20px;}
+  .card .avatar-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+  .card .avatar{width:36px;height:36px;border-radius:50%;background:var(--gray-200);flex:0 0 auto;}
+  .card .who{font-size:13px;color:var(--gray-500);}
+  .card .title{font-weight:700;font-size:14px;margin:8px 0 6px;}
+  .card .body{font-size:13px;color:var(--gray-700);}
+
+  /* feature icons */
+  .feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px;max-width:var(--maxw);margin:0 auto;text-align:center;}
+  .feature .icon{width:44px;height:44px;border-radius:50%;background:var(--gray-100);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:18px;}
+  .feature .title{font-weight:700;font-size:14px;margin-bottom:6px;}
+  .feature .desc{font-size:13px;color:var(--gray-500);}
+
+  /* accordion */
+  .accordion{max-width:var(--maxw);margin:0 auto;border-top:1px solid var(--gray-200);}
+  .acc-item{border-bottom:1px solid var(--gray-200);}
+  .acc-item summary{
+    list-style:none;cursor:pointer;padding:18px 4px;display:flex;justify-content:space-between;align-items:center;
+    font-weight:600;font-size:14px;
+  }
+  .acc-item summary::-webkit-details-marker{display:none;}
+  .acc-item summary .chev{width:22px;height:22px;border-radius:50%;background:var(--gray-100);display:flex;align-items:center;justify-content:center;font-size:12px;}
+  .acc-item .acc-body{padding:0 4px 18px;font-size:13px;color:var(--gray-500);}
+
+  /* nav bar sample */
+  .navbar-sample{display:flex;align-items:center;justify-content:space-between;border:1px solid var(--gray-200);border-radius:var(--radius-md);padding:14px 20px;max-width:var(--maxw);margin:0 auto;}
+  .navbar-sample .brand{font-weight:800;font-size:14px;display:flex;align-items:center;gap:8px;}
+  .navbar-sample .links{display:flex;gap:20px;font-size:13px;color:var(--gray-700);}
+  .navbar-sample .right{display:flex;gap:14px;align-items:center;font-size:13px;color:var(--gray-700);}
+
+  /* spacing scale */
+  .space-row{display:flex;align-items:center;gap:14px;max-width:var(--maxw);margin:0 auto;padding:8px 0;}
+  .space-row .bar{background:var(--black);height:10px;border-radius:4px;}
+  .space-row .label{width:90px;font-size:12px;font-family:monospace;color:var(--gray-500);}
+
+  footer.bottom{padding:30px 24px;text-align:center;font-size:12px;color:var(--gray-400);}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <h1>Minimal Portfolio — Design System</h1>
+  <p>A reusable style guide extracted from a clean, black/white, conversion-style landing page. Use this as the foundation for your portfolio.</p>
+</header>
+
+<nav class="toc">
+  <a href="#colors">Colors</a>
+  <a href="#type">Typography</a>
+  <a href="#spacing">Spacing</a>
+  <a href="#buttons">Buttons</a>
+  <a href="#badges">Badges &amp; Ratings</a>
+  <a href="#nav">Navigation</a>
+  <a href="#cards">Cards</a>
+  <a href="#features">Feature Icons</a>
+  <a href="#accordion">Accordion / FAQ</a>
+  <a href="#patterns">Page Patterns</a>
+</nav>
+
+<section id="colors">
+  <div class="wrap">
+    <h2>Color Palette</h2>
+    <p class="lead">Almost entirely neutral — pure black, pure white, and one near-white gray for section separation. One warm accent (gold stars) and one cool accent (verified blue) used sparingly for trust signals only.</p>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="fill" style="background:#0a0a0a"></div><div class="meta"><span class="name">Ink / Black</span><span class="hex">#0A0A0A</span></div></div>
+      <div class="swatch"><div class="fill" style="background:#ffffff;border-bottom:1px solid #eee"></div><div class="meta"><span class="name">White</span><span class="hex">#FFFFFF</span></div></div>
+      <div class="swatch"><div class="fill" style="background:#fafafa;border-bottom:1px solid #eee"></div><div class="meta"><span class="name">Section Gray</span><span class="hex">#FAFAFA</span></div></div>
+      <div class="swatch"><div class="fill" style="background:#e7e7e7"></div><div class="meta"><span class="name">Border Gray</span><span class="hex">#E7E7E7</span></div></div>
+      <div class="swatch"><div class="fill" style="background:#737373"></div><div class="meta"><span class="name">Muted Text</span><span class="hex">#737373</span></div></div>
+      <div class="swatch"><div class="fill" style="background:#f5a623"></div><div class="meta"><span class="name">Accent — Rating Gold</span><span class="hex">#F5A623</span></div></div>
+      <div class="swatch"><div class="fill" style="background:#2f6fed"></div><div class="meta"><span class="name">Accent — Verified Blue</span><span class="hex">#2F6FED</span></div></div>
+      <div class="swatch"><div class="fill" style="background:#22c55e"></div><div class="meta"><span class="name">Accent — Status Green</span><span class="hex">#22C55E</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="type" class="alt">
+  <div class="wrap">
+    <h2>Typography</h2>
+    <p class="lead">One geometric sans-serif throughout (Inter-style). Personality comes from weight and size contrast, not from mixing typefaces. Headlines are heavy (800) and tight (-2% letter spacing); body copy is regular weight and roomy.</p>
+    <div class="type-row"><div class="label">Display / 64px / 800</div><div class="sample"><div class="h-display">Pratique.</div></div></div>
+    <div class="type-row"><div class="label">Hero H1 / 42px / 800</div><div class="sample"><div class="h-hero">Organize your life in your<br>2nd brain.</div></div></div>
+    <div class="type-row"><div class="label">Section H2 / 24px / 700</div><div class="sample"><div class="h-section">Transform the chaos …</div></div></div>
+    <div class="type-row"><div class="label">Card title / 16px / 700</div><div class="sample"><div class="h-card">Second Brain</div></div></div>
+    <div class="type-row"><div class="label">Body / 15px / 400</div><div class="sample"><div class="t-body">Organize everything in one place. No more juggling between different apps.</div></div></div>
+    <div class="type-row"><div class="label">Caption / 12px / 400</div><div class="sample"><div class="t-caption">500+ verified reviews</div></div></div>
+  </div>
+</section>
+
+<section id="spacing">
+  <div class="wrap">
+    <h2>Spacing &amp; Layout</h2>
+    <p class="lead">8px base unit. Generous vertical rhythm between sections (56–96px), tight internal card padding (16–20px). Content capped at ~1100px and centered; full-bleed gray bands break up white sections.</p>
+    <div class="space-row"><div class="label">4px</div><div class="bar" style="width:4px"></div></div>
+    <div class="space-row"><div class="label">8px</div><div class="bar" style="width:8px"></div></div>
+    <div class="space-row"><div class="label">16px</div><div class="bar" style="width:16px"></div></div>
+    <div class="space-row"><div class="label">24px</div><div class="bar" style="width:24px"></div></div>
+    <div class="space-row"><div class="label">40px</div><div class="bar" style="width:40px"></div></div>
+    <div class="space-row"><div class="label">64px</div><div class="bar" style="width:64px"></div></div>
+    <div class="space-row"><div class="label">96px</div><div class="bar" style="width:96px"></div></div>
+    <p class="lead" style="margin-top:24px;">Border radius: pills (999px) for every button, 14px for cards/screenshots, 8px for small chips.</p>
+  </div>
+</section>
+
+<section id="buttons" class="alt">
+  <div class="wrap">
+    <h2>Buttons</h2>
+    <p class="lead">A single primary action style — solid black pill — repeated everywhere. No gradients, no shadows, no color buttons.</p>
+    <div class="row">
+      <button class="btn">Access my work →</button>
+      <button class="btn secondary">View resume</button>
+      <button class="btn small">Add to cart</button>
+    </div>
+  </div>
+</section>
+
+<section id="badges">
+  <div class="wrap">
+    <h2>Badges &amp; Ratings</h2>
+    <p class="lead">Trust signals are small, quiet, and text-led: gold stars + review count, a black "Bestseller"-style chip, a blue verified check.</p>
+    <div class="row">
+      <span class="stars">★★★★★</span>
+      <span class="t-caption">500+ reviews</span>
+      <span class="badge">Featured</span>
+      <span class="verified"><span class="dot">✓</span> Verified</span>
+    </div>
+  </div>
+</section>
+
+<section id="nav">
+  <div class="wrap">
+    <h2>Navigation Bar</h2>
+    <p class="lead">Logo + wordmark left, 2–3 text links centered/left, utility icons (language, account, cart/contact) right. Borderless, sits on white.</p>
+    <div class="navbar-sample">
+      <div class="brand">◆ Yourname</div>
+      <div class="links"><span>Work</span><span>About</span><span>Contact</span></div>
+      <div class="right"><span>EN ▾</span><span>☰</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="cards" class="alt">
+  <div class="wrap">
+    <h2>Testimonial / Content Cards</h2>
+    <p class="lead">Light gray fill, no shadow, 14px radius, generous padding. Avatar + name/role, bold one-line title, short body text, verified tag bottom-left.</p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="avatar-row"><div class="avatar"></div><div><div class="stars" style="font-size:12px;">★★★★★</div><div class="who">Sarah K. — Product Manager</div></div></div>
+        <div class="title">Exactly what I needed</div>
+        <div class="body">Clean, fast, and easy to brief. Would hire again without hesitation.</div>
+        <div style="margin-top:10px;"><span class="verified"><span class="dot">✓</span> Verified</span></div>
+      </div>
+      <div class="card">
+        <div class="avatar-row"><div class="avatar"></div><div><div class="stars" style="font-size:12px;">★★★★★</div><div class="who">David R. — Founder</div></div></div>
+        <div class="title">Great communication</div>
+        <div class="body">Delivered ahead of schedule with thoughtful polish on every detail.</div>
+        <div style="margin-top:10px;"><span class="verified"><span class="dot">✓</span> Verified</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <h2>Feature / Icon Row</h2>
+    <p class="lead">Three or four columns, circular gray icon chip, bold short title, one muted sentence underneath. No borders between columns — whitespace does the separating.</p>
+    <div class="feature-grid">
+      <div class="feature"><div class="icon">◷</div><div class="title">Fast delivery</div><div class="desc">Most projects shipped within days, not weeks.</div></div>
+      <div class="feature"><div class="icon">◆</div><div class="title">Clean code</div><div class="desc">Readable, documented, and easy to hand off.</div></div>
+      <div class="feature"><div class="icon">✓</div><div class="title">Direct contact</div><div class="desc">You talk to the person doing the work.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="accordion" class="alt">
+  <div class="wrap">
+    <h2>Accordion / FAQ</h2>
+    <p class="lead">Plain text rows, bold question, thin divider, circular chevron toggle on the right — no card backgrounds.</p>
+    <div class="accordion">
+      <details class="acc-item" open>
+        <summary>How do you usually work with clients? <span class="chev">⌃</span></summary>
+        <div class="acc-body">A short kickoff call, a clear scope, then async updates until delivery.</div>
+      </details>
+      <details class="acc-item">
+        <summary>What's your turnaround time? <span class="chev">⌄</span></summary>
+        <div class="acc-body">Most small projects take 3–10 working days depending on scope.</div>
+      </details>
+      <details class="acc-item">
+        <summary>Do you offer ongoing support? <span class="chev">⌄</span></summary>
+        <div class="acc-body">Yes — month-to-month retainers are available after the first project.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="patterns">
+  <div class="wrap">
+    <h2>Page Pattern (section-by-section order)</h2>
+    <p class="lead">This is the structural skeleton you can reuse for your own one-page portfolio.</p>
+    <ol style="font-size:14px;color:var(--gray-700);line-height:2;">
+      <li><strong>Nav</strong> — logo, 2–3 links, utility icons.</li>
+      <li><strong>Hero</strong> — bold 2-line headline, one muted subline, single black pill CTA.</li>
+      <li><strong>Proof shot</strong> — full-width framed screenshot/mockup of your best work on a light gray band.</li>
+      <li><strong>Star rating strip</strong> — small social proof line under the proof shot.</li>
+      <li><strong>Product/Project detail</strong> — gallery thumbnails left, title + price/role + bullet specs + CTA right.</li>
+      <li><strong>Testimonial carousel</strong> — 3 cards visible, arrows to scroll, aggregate rating line above.</li>
+      <li><strong>Big statement</strong> — one oversized bold sentence (no image) as a pacing break.</li>
+      <li><strong>Feature/skill row</strong> — 3–4 icon columns explaining how you work.</li>
+      <li><strong>Secondary CTA band</strong> — repeat the hero CTA, shorter copy.</li>
+      <li><strong>FAQ accordion.</strong></li>
+      <li><strong>Footer</strong> — 3–4 link columns + newsletter/contact field + socials + legal line.</li>
+    </ol>
+  </div>
+</section>
+
+<footer class="bottom">Design system reference — built for reuse, not the original site. Swap copy, imagery and exact spacing to make it your own.</footer>
+
+</body>
+</html>

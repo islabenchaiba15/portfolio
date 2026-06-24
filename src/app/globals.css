@@ -1,26 +1,160 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --color-ink-black: #0A0A0A;
+  --color-section-gray: #FAFAFA;
+  --color-border-gray: #E7E7E7;
+  --color-muted-text: #737373;
+  --color-accent-gold: #F5A623;
+  --color-accent-blue: #2F6FED;
+  --color-status-green: #22C55E;
+}
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0A0A0A;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/* Scrollbar styling matching the minimal theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+::-webkit-scrollbar-thumb {
+  background: #E7E7E7;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #737373;
+}
+
+/* Custom styles for micro-animations and focus accessibility */
+.focus-ring {
+  outline: none;
+  transition: box-shadow 0.15s ease-in-out;
+}
+.focus-ring:focus-visible {
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #0A0A0A;
+}
+
+/* Animated custom terminal blinker */
+@keyframes blink {
+  50% { opacity: 0; }
+}
+.terminal-cursor {
+  animation: blink 1s step-start infinite;
+}
+
+/* Live chart pulsing dot */
+@keyframes pulse-dot {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(47, 111, 237, 0.4); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(47, 111, 237, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(47, 111, 237, 0); }
+}
+.pulse-indicator {
+  animation: pulse-dot 2s infinite;
+}
+
+/* Safe Area Insets for mobile browser chrome integration */
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.safe-top {
+  padding-top: env(safe-area-inset-top);
+}
+
+/* Floating animation for dashboard cards */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+.animate-float-delay-1 {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 2s;
+}
+.animate-float-delay-2 {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 4s;
+}
+
+/* Global Interactive Cursor Overrides */
+button,
+a,
+select,
+summary,
+[role="button"] {
+  cursor: pointer !important;
+}
+
+/* Button Component Styles matching the Brand/Design System */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0A0A0A; /* Ink Black */
+  color: #FFFFFF;
+  font-size: 0.875rem; /* 14px */
+  font-weight: 600;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 9999px; /* pill */
+  border: 1px solid #0A0A0A;
+  transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #FFFFFF;
+  color: #0A0A0A;
+}
+
+.btn.secondary {
+  background-color: #FFFFFF;
+  color: #0A0A0A;
+  border-color: #E7E7E7;
+}
+
+.btn.secondary:hover {
+  background-color: #FAFAFA;
+  border-color: #a3a3a3;
+}
+
+.btn.small {
+  padding: 8px 16px;
+  font-size: 0.75rem; /* 12px */
+}
+
+/* Scroll Animation Classes */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
