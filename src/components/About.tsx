@@ -25,26 +25,16 @@ export default function About() {
               {/* Outer decorative ring */}
               <div className="absolute -inset-2 rounded-[18px] border border-border-gray bg-white/50 scale-95 group-hover:scale-100 transition-all duration-300"></div>
               
-              {/* Profile Photo Placeholder */}
-              <div className="relative w-64 h-64 md:w-72 md:h-72 bg-white border border-border-gray rounded-[14px] overflow-hidden flex flex-col justify-center items-center p-4">
-                {/* Minimal graphic pattern representing data structure */}
-                <div className="absolute inset-0 opacity-[0.02] flex flex-wrap gap-2 p-3 overflow-hidden select-none pointer-events-none">
-                  {Array.from({ length: 144 }).map((_, i) => (
-                    <div key={i} className="w-3 h-3 rounded-full bg-ink-black"></div>
-                  ))}
-                </div>
+              {/* Profile Photo Image */}
+              <div className="relative w-64 h-64 md:w-72 md:h-72 bg-white border border-border-gray rounded-[14px] overflow-hidden flex flex-col justify-center items-center p-2">
+                <img
+                  src="/images/about-profile.png"
+                  alt="Mohamed Islam Benchaiba"
+                  className="w-full h-full object-contain rounded-[10px]"
+                />
                 
-                {/* Content */}
-                <div className="w-20 h-20 rounded-full bg-section-gray border border-border-gray flex items-center justify-center mb-4 z-10">
-                  <span className="text-xl font-extrabold text-ink-black">MI</span>
-                </div>
-                <div className="text-center z-10">
-                  <h3 className="text-sm font-bold text-ink-black">Mohamed Islam Benchaiba</h3>
-                  <p className="text-[11px] text-muted-text uppercase tracking-widest mt-1">Data Analyst & Analytics Engineer</p>
-                </div>
-
                 {/* Location indicator */}
-                <div className="absolute bottom-4 flex items-center gap-1.5 bg-section-gray border border-border-gray px-3 py-1.5 rounded-full">
+                <div className="absolute bottom-4 flex items-center gap-1.5 bg-white/90 backdrop-blur-sm border border-border-gray px-3 py-1.5 rounded-full shadow-sm">
                   <span className="w-2 h-2 rounded-full bg-accent-blue pulse-indicator"></span>
                   <span className="text-[10px] font-bold text-ink-black tracking-wide flex items-center gap-0.5">
                     ALGERIA
@@ -68,10 +58,7 @@ export default function About() {
 
             <div className="text-sm md:text-base text-muted-text space-y-4 max-w-2xl leading-relaxed">
               <p>
-                With a background in software engineering, I specialize in engineering complete, end-to-end data systems. Rather than just analyzing isolated worksheets, I focus on the entire pipeline lifecycle: connecting complex source systems, developing resilient ETL/ELT pipelines, modeling data schemas for optimized performance, and crafting dashboards that drive action.
-              </p>
-              <p>
-                Whether standardizing mismatched transactions across databases, configuring real-time streaming pipelines, or building robust DAX calculations in Power BI, I bridge the gap between technical infrastructure and strategic decision-making. My work is focused on transparency, precision, and delivering clear margin-improving opportunities.
+                I’m a Full-Stack Data Analyst with a software engineering background, combining analytics, data modeling, visualization, and automation to transform raw data into clear business insights. I build end-to-end solutions that are both analytically useful and technically reliable.
               </p>
             </div>
 
