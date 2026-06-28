@@ -1,47 +1,9 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { ArrowRight, Download } from "lucide-react";
 
 export default function Hero() {
-  const words = ["Clear, Actionable Insights.", "Confident, High-Stakes Decisions.", "Profitable, Data-Driven Margins."];
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [currentText, setCurrentText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [typingSpeed, setTypingSpeed] = useState(100);
-
-  useEffect(() => {
-    let timer: NodeJS.Timeout;
-    const handleType = () => {
-      const fullWord = words[currentWordIndex];
-      if (!isDeleting) {
-        // Typing
-        setCurrentText(fullWord.substring(0, currentText.length + 1));
-        setTypingSpeed(100);
-
-        if (currentText === fullWord) {
-          // Pause at the end of typing
-          timer = setTimeout(() => setIsDeleting(true), 2000);
-          return;
-        }
-      } else {
-        // Deleting
-        setCurrentText(fullWord.substring(0, currentText.length - 1));
-        setTypingSpeed(50);
-
-        if (currentText === "") {
-          setIsDeleting(false);
-          setCurrentWordIndex((prev) => (prev + 1) % words.length);
-          setTypingSpeed(300);
-          return;
-        }
-      }
-    };
-
-    timer = setTimeout(handleType, typingSpeed);
-    return () => clearTimeout(timer);
-  }, [currentText, isDeleting, currentWordIndex, typingSpeed]);
-
   const handleScrollToProjects = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     const element = document.getElementById("projects");
@@ -77,8 +39,7 @@ export default function Hero() {
             {/* Headline */}
             <h1 className="h-hero text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-ink-black leading-none mb-6">
               From Data Chaos <br className="hidden md:inline" />
-              <span className="text-muted-text">to {currentText}</span>
-              <span className="inline-block w-[3px] h-[1em] bg-accent-blue ml-1 animate-pulse" style={{ verticalAlign: "middle" }}></span>
+              <span className="text-muted-text">to Clear, Actionable Insights.</span>
             </h1>
 
             {/* Subtitle */}
